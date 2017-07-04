@@ -3,8 +3,45 @@
   <head>
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+      <script src="/javascripts/bootstrap.min.js"></script>
   </head>
   <body>
+    <header>
+        <!-- 导航条 -->
+        <!-- navbar与nav区别是它有一个背景看起来比较明显 -->
+        <!-- navbar navbar-default 设置基础样式 -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <!-- 栅格化布局 -->
+            <div class="container">
+                <!--  navbar-header 导航头第一个选项 导航头-->
+                <div class="navbar-header">
+                    <!-- navbar-brand  会设置醒目背景 -->
+                    <a href="index.hbs" class="navbar-brand logo">
+                        <img src="../images/logo.png" alt="中原孵化城">
+                    </a>
+                    <!-- 折叠按钮 -->
+                    <!--  navbar-toggle 按钮是否显示是根据屏幕分辨率决定 当屏幕宽度小于768时会显示该按钮 大于时不出现-->
+                    <!-- data-toggle="collapse" 决定容器是否显示 当 collapse设置时宽度小于768会隐藏掉设置class="collapse的容器 即下面的div-->
+                    <!--  data-target=".navbar-responsive-collapse" 响应式导航条 -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-response-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!-- 缩小之后被折叠的元素 -->
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 首页</a></li>
+                        <li><a href=""><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 关于我们</a></li>
+                        <li><a href=""><span class="glyphicon glyphicon-fire" aria-hidden="true"></span> 入驻团队与项目</a></li>
+                        <li><a href=""><span class="glyphicon glyphicon glyphicon-question-sign" aria-hidden="true"></span> 新闻资讯</a></li>
+                        <li><a href=""><span class="glyphicon glyphicon glyphicon-question-sign" aria-hidden="true"></span> 申请入驻</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
     {{{body}}}
   </body>
 </html>
