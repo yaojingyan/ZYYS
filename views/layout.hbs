@@ -2,56 +2,79 @@
 <html>
   <head>
     <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-      <script src="/javascripts/bootstrap.min.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+      <script src="/javascripts/jquery.min.js"></script>
+      <script>
+          $('#second-menu').hide();
+          $('#Show').click(function () {
+              $('#second-menu').show();
+          })
+
+      </script>
   </head>
   <body>
     <header>
-        <!-- 导航条 -->
-        <!-- navbar与nav区别是它有一个背景看起来比较明显 -->
-        <!-- navbar navbar-default 设置基础样式 -->
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <!-- 栅格化布局 -->
-            <div class="container">
-                <!--  navbar-header 导航头第一个选项 导航头-->
-                <div class="navbar-header">
-                    <!-- navbar-brand  会设置醒目背景 -->
-                    <a href="index.hbs" class="navbar-brand logo">
-                        <img src="./images/logo.png" alt="中原孵化城">
-                    </a>
-                    <!-- 折叠按钮 -->
-                    <!--  navbar-toggle 按钮是否显示是根据屏幕分辨率决定 当屏幕宽度小于768时会显示该按钮 大于时不出现-->
-                    <!-- data-toggle="collapse" 决定容器是否显示 当 collapse设置时宽度小于768会隐藏掉设置class="collapse的容器 即下面的div-->
-                    <!--  data-target=".navbar-responsive-collapse" 响应式导航条 -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-response-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <!-- 缩小之后被折叠的元素 -->
-                <div class="collapse navbar-collapse" id="navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 首页</a></li>
-                        <li><a href=""><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 关于我们</a></li>
-                        <li><a href=""><span class="glyphicon glyphicon-fire" aria-hidden="true"></span> 入驻团队与项目</a></li>
-                        <li><a href=""><span class="glyphicon glyphicon glyphicon-question-sign" aria-hidden="true"></span> 新闻资讯</a></li>
-                        <li><a href=""><span class="glyphicon glyphicon glyphicon-question-sign" aria-hidden="true"></span> 申请入驻</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <div class="logo">
+            <a href="">
+                <img src="../images/logo.png" alt="中原孵化城" style="width:270px;">
+            </a>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li>
+                    <a id="Show">关于我们</a>
+                </li>
+                <li><a href="">入驻团队与项目</a></li>
+                <li><a href=""> 新闻资讯</a></li>
+                <li><a href="">申请入驻</a></li>
+            </ul>
+        </div>
+        <ul id="second-menu">
+            <li>孵化器简介</li>
+            <li>管理团队</li>
+            <li>组织架构</li>
+            <li>孵化范围</li>
+            <li>发起单位</li>
+            <li>战略合作伙伴</li>
+            <li>创业导师</li>
+            <li>服务支持</li>
+        </ul>
     </header>
     {{{body}}}
     <footer>
-        <p><img src="images/logo.png" alt=""></p>
-        <p>公司地址：河南省郑州市商都路心怡路易元国际大厦B座24楼</p>
-        <p>友情链接：
-            <a href="">河南影视集团</a>
-            <a href="">大象影视</a>
-            <a href="">大象融媒</a>
-        </p>
-        <p>电话：0371-55525170</p>
+        <div class="bottom">
+            <div class="bottom-logo">
+                <img src="../images/logo.png" alt="">
+            </div>
+            <div class="bottom-menu">
+                <ul>
+                    <li><a href="">首页</a></li>
+                    <li><a href="">关于我们</a></li>
+                    <li><a href="">入驻团队与项目</a></li>
+                    <li><a href="">新闻资讯</a></li>
+                    <li><a href="">申请入驻</a></li>
+                </ul>
+            </div>
+            <div style="clear:both"></div>
+            <div>
+                公司地址：河南省郑州市商都路心怡路易元国际大厦B座24楼
+            </div>
+            <div>友情链接：
+                <a href="http://www.hnysjt.com">河南影视集团</a>
+                <a href="http://www.daxiangyingshi.com">大象影视</a>
+                <a href="http://www.hnr.cn/news/xwzt/dxrm">大象融媒</a>
+            </div>
+            <div>电话：0371-55525170</div>
+        </div>
+
+        <div class="erweima">
+            <img src="../images/erweima.png" alt="">
+        </div>
+        <div class="Gotop">
+            <a href="#" title="返回顶部"></a>
+        </div>
     </footer>
   </body>
 </html>
