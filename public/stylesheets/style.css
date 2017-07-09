@@ -5,7 +5,6 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   min-width: 1080px;
-  /*background-color: #000;*/
 }
 /*页头*/
 header{
@@ -15,6 +14,9 @@ header{
   color: #fff;
   background-color: #000;
   opacity:0.8;
+  position: fixed;
+  top:0;
+  z-index:999;
 }
 header .logo{
   float: left;
@@ -54,14 +56,14 @@ header .menu ul li{
 header .menu ul li a{
   display: block;
   width:100%;
-  height: 100px;
-  max-height:70px;
+  height: 50px;
+  max-height:50px;
   text-decoration: none;
   color: #fff;
 }
 header .menu ul li a:hover{
   color: orangered;
-  font-size: 16px;
+  transform: scale(1.2);
   background-color: #000;
 }
 #second-menu{
@@ -85,14 +87,22 @@ footer div{
   text-align: center;
   line-height:32px;
 }
+footer .bottom-logo{
+  /*position: relative;*/
+  overflow: hidden;
+}
 footer .bottom-logo img{
-  padding-top: 30px;
   width:270px;
   height:50px;
+  /*position: absolute;*/
+  /*left:43%;*/
+  /*top:10px;*/
 }
 footer div.bottom-menu{
+  /*margin-top: 50px;*/
   width:100%;
   height:32px;
+  overflow: hidden;
 }
 footer a{
   color: #fff;
@@ -120,13 +130,6 @@ footer .erweima img{
   -webkit-background-size:102px 100px;
   background-size:102px 100px;
 }
-footer .Gotop{
-  width:40px;
-  height: 40px;
-  background: url(../images/zhidingjintou.png) no-repeat;
-  position: fixed;
-  right:10px;
-  bottom:50px;
-}
+
 
 

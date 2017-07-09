@@ -1,0 +1,494 @@
+*{
+    margin:0;
+    padding:0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box
+}
+/*轮播*/
+.carousel{
+    width:1903px;
+    height:900px;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+}
+/*轮播内容*/
+.carousel .carContent ul{
+    list-style-type:none;
+}
+.carousel .carContent ul li{
+    position: absolute;
+    left:0;
+    top:0;
+    opacity: 0;
+}
+.carousel .carContent ul li img{
+    width:1903px;
+    height:910px;
+}
+.carousel .carContent ul li:nth-child(1){
+    opacity:1;
+}
+.carousel .carContent ul li .text{
+    position: absolute;
+    top:40%;
+    left:35%;
+    z-index: 999;
+    color:#fff;
+    font-size:50px;
+    font-weight:bold;
+    text-align: center;
+}
+.carousel .carContent ul li .text a{
+    width:200px;
+    height:100px;
+    font-size:20px;
+    font-weight: normal;
+    padding:15px 25px;
+    background-color:#f2770d;
+    cursor: pointer;
+}
+.carousel .carContent ul li .text p{
+    margin-left: -25%;
+}
+/*轮播按钮*/
+.btns a{
+    width:57px;
+    height:104px;
+    position: absolute;
+    top:50%;
+    margin-top:-20px;
+    z-index: 999;
+    display: none;
+}
+.btns a.leftBtn{
+    left:30px;
+    background: url(../images/zuokuang.png);
+}
+.btns a.rightBtn{
+    right:30px;
+    background: url(../images/youkuang.png);
+}
+/*焦点*/
+.rec{
+    position: absolute;
+    bottom:10px;
+    left:20px;
+    width:60px;
+    height:5px;
+}
+.rec ol{
+    list-style-type:none;
+}
+.rec ol li{
+    float: left;
+    width:10px;
+    height:5px;
+    margin-right: 10px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.cur{
+    background-color: red;
+}
+/*向下箭头*/
+.todown{
+    width:86px;
+    height: 86px;
+    position:absolute;
+    left:50%;
+    bottom:30px;
+}
+/*模块同样的样式*/
+.title{
+    text-align:center;
+    padding-top: 20px;
+}
+.title p{
+    font-size:33px;
+}
+.title span{
+    background-color: #f2770d;
+    color: #fff;
+    margin-bottom: 35px;
+}
+button{
+    border:none;
+    outline:none;
+    color: #fff;
+    font-weight:bold;
+    padding:15px 70px;
+    background-color: #f2770d;
+    position: relative;
+    left:45%;
+    margin-top: 30px;
+}
+/*关于我们*/
+.jianjie p{
+    text-indent: 2em;
+    color: gray;
+    line-height:34px;
+}
+/*发起单位*/
+.danwei{
+    width:100%;
+    overflow: hidden;
+}
+.danwei ul{
+    margin-top: 30px;
+    list-style-type: none;
+}
+.danwei ul li{
+    float:left;
+    width:20%;
+    -webkit-background-size:100%;
+    background-size:100%;
+    position: relative;
+}
+.danwei ul li:hover::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    font-size:20px;
+    color:#fff;
+    width:100%;
+    height: 100%;
+    background-color: #f2770d;
+    text-align:center;
+    line-height:200px;
+    /*过渡*/
+    transition:all 0.4s ease 0s;
+}
+.danwei ul li:nth-child(1):hover::before{
+    content:"河南电影电视制作集团有限公司";
+}
+.danwei ul li:nth-child(2):hover::before{
+    content:"河南大象影片制片有限公司";
+}
+.danwei ul li:nth-child(3):hover::before{
+    content:"易元国际";
+}
+.danwei ul li:nth-child(4):hover::before{
+    content:"河南哲思出版传媒股份有限公司";
+}
+.danwei ul li:nth-child(5):hover::before{
+    content:"河南悦汇文化传播有限公司";
+}
+.danwei ul li:nth-child(6):hover::before{
+    content:"珠海宏晟文化传播有限公司";
+}
+.danwei ul li img{
+    width:100%;
+    height:100%;
+    padding:20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*战略合作伙伴*/
+div.partner{
+    margin-top:30px;
+    width:20%;
+    position: relative;
+}
+div.partner img{
+    width:100%;
+    height:100%;
+    padding:20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+div.partner:hover::before{
+    content: '中国广播电视协会电视剧导演工作委员会';
+    position: absolute;
+    top:0;
+    left:0;
+    font-size:20px;
+    color:#fff;
+    width:100%;
+    height: 100%;
+    background-color: #f2770d;
+    text-align:center;
+}
+/*创业导师*/
+div.teacher{
+    width:80%;
+    height: 190px;
+    margin:30px auto;
+    background-color: skyblue;
+    /*overflow: hidden;*/
+    position: relative;
+}
+div.teacher .intro{
+    width:4000px;
+    position: absolute;
+    top:0;
+    left:0;
+}
+div.teacher .intro ul{
+    list-style-type:none;
+}
+div.teacher ul li{
+    float: left;
+    margin-right: 10px;
+    margin-top:5px;
+    width: 180px;
+    height: 180px;
+}
+div.teacher ul li img{
+    width: 180px;
+    height: 180px;
+}
+div.intro ul li:hover::before{
+    content: "唐国强";
+    position: absolute;
+    top:5px;
+    left:0;
+    font-size:20px;
+    color:#fff;
+    /*width: 100%;*/
+    /*height: 100%;*/
+    background-color: #f2770d;
+    text-align:center;
+    /*过渡*/
+    transition:all 0.4s ease 0s;
+}
+/*团队与项目*/
+div.bg{
+    background-color: #f7f7f7;
+}
+div.beijing{
+    margin-top: 30px;
+    background: url(../images/tuanduibeijing.jpg) no-repeat center center;
+    width:100%;
+    height:450px;
+    -webkit-background-size:cover;
+    background-size:cover;
+    position: relative;
+}
+.beijing .team{
+    width:60%;
+    height:500px;
+    position: absolute;
+    left:0;
+}
+.beijing .pro{
+    width:60%;
+    height:500px;
+    position: absolute;
+    right:0;
+}
+.beijing .team a,.pro a{
+    background: url(../images/shou.png) no-repeat left top;
+    padding-left: 148px;
+    display: block;
+    width:280px;
+    margin-left: 15%;
+    margin-top: 180px;
+    text-decoration: none;
+}
+.beijing .pro a{
+    margin-left: 30%;
+}
+.beijing .team a span:hover,.pro a span:hover{
+    background-color: #fff;
+    color: #f2770d;
+    /*background: url(../images/);*/
+}
+.team a span,.pro a span{
+    display: block;
+    width:274px;
+    height:80px;
+    text-align:center;
+    line-height:80px;
+    border:1px solid #fff;
+    font-size:46px;
+    color: #fff;
+    background-color: #f2770d;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+.team a em,.pro a em{
+    width:274px;
+    color: #fff;
+    font-size:18px;
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    font-style: normal;
+}
+/*服务支持*/
+.service{
+    background: url(../images/sigeqiu.png) no-repeat center center;
+    -webkit-background-size:auto;
+    background-size:auto;
+    width: 100%;
+    height:450px;
+}
+/*新闻资讯*/
+.news{
+    width:92%;
+    position: relative;
+    margin:0 auto;
+    margin-top:65px;
+    /*border:1px solid red;*/
+}
+.news .item{
+    width:1600px;
+    margin:0 auto;
+    position: relative;
+    overflow: hidden;
+}
+.news .item ul{
+    width:6000px;
+    list-style-type:none;
+    position: relative;
+}
+.news .item ul li{
+    float: left;
+    width:300px;
+    margin:10px;
+    margin-left:0;
+    padding:10px 0;
+    /*border:1px solid blue;*/
+}
+.news .item ul li:hover{
+    color: #fff;
+    background-color: #f2770d;
+}
+.news .item ul li img{
+    width:100%;
+    height:260px;
+}
+.news .content{
+    width:100%;
+    text-align: center;
+    margin-top: 20px;
+    line-height:24px;
+}
+.news .content .news-title{
+    width:300px;
+    /*height: 50px;*/
+    font-size:18px;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.news .content .news-time{
+    font-size:12px;
+    padding-left: 24px;
+    color: #c4c4c4;
+    margin:10px 0;
+}
+.news .content .news-ms{
+    width: 95%;
+    margin:0 auto;
+    height:125px;
+    color: #818284;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.anniu a{
+    text-decoration: none;
+    position: absolute;
+    top:140px;
+    color: #7b7b7b;
+    display: block;
+    width:34px;
+    height: 75px;
+}
+.anniu a.l-btn{
+    left:-3%;
+}
+.anniu a.r-btn{
+    right:-2%;
+}
+.jiaodian{
+    height: 30px;
+    margin-top:57px;
+}
+.jiaodian ul{
+    list-style-type:none;
+    text-align: center;
+    margin:0 auto;
+    padding:0;
+}
+.jiaodian ul li{
+    float: left;
+    cursor: pointer;
+    display: inline-block;
+    width:10px;
+    height: 4px;
+    margin:1px;
+    overflow: hidden;
+    border:1px solid #7b7b7b;
+    line-height:999px;
+}
+.jiaodian ul li.on{
+    background-color: #f2770d;
+    border:1px solid #f2770d;
+}
+.newsbtn{
+    margin-bottom: 30px;
+}
+/*申请入驻*/
+#ruzhu{
+    padding-bottom: 150px;
+}
+.liucheng{
+    width: 100%;
+    height: 235px;
+    padding-top: 30px;
+    position: relative;
+}
+.liucheng ul{
+    width:1000px;
+    margin:0 auto;
+    list-style-type:none;
+}
+.liucheng ul li{
+    float: left;
+    width:33.3333%;
+    padding:30px;
+    position: relative;
+}
+.liucheng ul li span{
+    display: block;
+    width:50px;
+    height: 50px;
+    border:1px solid #f2770d;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    position: absolute;
+    left:0;
+    line-height: 50px;
+    text-align:center;
+    cursor: pointer;
+    font-size:20px;
+    font-weight:bold;
+    color: #fff;
+    background-color: #f2700d;
+}
+.liucheng ul li h1{
+    margin-left: 50px;
+    line-height:50px;
+}
+.liucheng .ruzhubtn{
+    position: absolute;
+    left:45%;
+    bottom:-70px;
+}
+/*返回顶部*/
+.Gotop{
+    width:40px;
+    height: 40px;
+    background: url(../images/zhidingjintou.png) no-repeat;
+    position: fixed;
+    right:10px;
+    bottom:50px;
+    z-index: 999;
+}

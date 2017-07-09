@@ -1,2 +1,512 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<!--轮播-->
+<link rel="stylesheet" href="stylesheets/index.css">
+<div class="carousel">
+    <!--左右按钮-->
+    <div class="btns">
+        <a class="leftBtn"></a>
+        <a class="rightBtn"></a>
+    </div>
+    <!--轮播内容-->
+    <div class="carContent">
+        <ul>
+            <li>
+                <img src="images/chuangye.jpg" alt="">
+                <div class="text">
+                    <span>专注于做影视行业创新创业载体</span><br>
+                    <a>加入我们/JOIN US</a>
+                </div>
+            </li>
+            <li>
+                <img src="images/sheyingpeng.jpg" alt="">
+                <div class="text">
+                    <p>集结有志影视文化人才</p>
+                    <p>孵化影视文化精品 孵化优秀影视文化企业</p>
+                </div>
+            </li>
+            <li>
+                <img src="images/danfan.jpg" alt="">
+                <div class="text">
+                    <p>搭建中国中部影视产业全方位创新创业服务平台</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--焦点-->
+    <div class="rec">
+        <ol>
+            <li class="cur"></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+    <!--向下箭头-->
+    <div class="todown">
+        <img src="images/xiangxiajiantou.png" alt="">
+    </div>
+</div>
+<script src="javascripts/jquery.min.js"></script>
+<script>
+    $(function(){
+        $('.todown').on('click',function(){
+            var offsetH = $('.Aboutus').offset().top;
+            $('body').animate({'scrollTop':offsetH},800);
+        })
+    })
+    <!--轮播-->
+    // 定义信号量
+    var idx  = 0;
+    var timer = null;
+    //自动轮播
+    function autoPlay(){
+        //函数节流
+        if($('.carContent ul li').isanimated){return;}
+        $('.carContent ul li').eq(idx).animate({opacity:0},2000);
+            idx++;
+            if(idx > 2){
+                idx = 0;
+            }
+        $('.carContent ul li').eq(idx).animate({opacity:1},2000);
+        //改变焦点
+        changeRec();
+    }
+    //右按钮点击
+    $('.rightBtn').click(function(){
+        autoPlay();
+    });
+    //左按钮点击
+    $('.leftBtn').click(function(){
+        if($('.carContent ul li').isanimated){return;}
+        $('.carContent ul li').eq(idx).animate({'opacity':0},2000);
+        idx--;
+        if(idx < 0){
+            idx = 2;
+        }
+        $('.carContent ul li').eq(idx).animate({'opacity':1},2000);
+        changeRec();
+    });
+    //自动轮播
+    timer = setInterval(autoPlay,5000);
+    $('.carousel').mouseenter(function(){
+        clearInterval(timer);
+        $('.leftBtn,.rightBtn').show();
+        //点击箭头下降一张图片的距离
+    })
+    $('.carousel').mouseleave(function(){
+        timer = setInterval(autoPlay,5000);
+        $('.leftBtn,.rightBtn').hide();
+    })
+    //焦点点击换图
+    $('.rec ol li').click(function(){
+        $(this).addClass('cur').siblings().removeClass('cur');
+        $('.carContent ul li').eq(idx).animate({'opacity':0},2000);
+        idx = $(this).index();
+        $('.carContent ul li').eq(idx).animate({'opacity':1},2000);
+    })
+    //改变焦点函数
+    function changeRec(){
+        $('.rec ol li').eq(idx).addClass('cur').siblings().removeClass('cur');
+        if(idx == 3){
+            $('.rec ol li').eq(0).addClass('cur').siblings().removeClass('cur');
+        }
+    }
+</script>
+
+<div class="Aboutus">
+    <div class="title">
+        <p>关于我们</p>
+        <span>ABOUT US</span>
+    </div>
+    <div class="jianjie">
+        <p>
+            中原影视孵化器，由河南电影电视制作集团有限公司和河南华隆股权投资基金管理有限公司、河南金犁风险投资管理有限公司、河南大象影视制片有限公司、河南易元置业有限公司、河南省悦汇文
+            化传播有限公司、河南中财创业投资管理有限公司、河南哲思出版传媒股份有限公司为主要发起人联合发起创办，是在国家深入实施创新驱动发展战略和适应经济发展新常态的大背景下，是在全国影视
+            行业的迅猛发展，中国社会对影视文化产业飞速提升的需求，影视行业创业拥有了巨大的发展空间的大环境里，组建的专注于全方位助推影视产业创新创业的孵化平台。 国内首家影视行业细分孵化器——中原影视孵化器位于郑东高铁核心，新客站南，与郑东CBD、CGD、大学城相邻，交通和生活便利，科技和文化资源丰富，便于创新资源和创业者集聚，固定办公场地一期投入使用面积2400平方米。
+        </p>
+    </div>
+    <button>点击查看更多</button>
+</div>
+<div>
+    <div class="title">
+        <p>发起单位</p>
+        <span>INITIATE UNITS</span>
+    </div>
+    <div class="danwei">
+        <ul>
+            <li>
+                <img src="images/henanyingshi.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/daxiangyingshi.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/yiyuanguoji.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/zhesi.png" alt="">
+            </li>
+            <li>
+                <img src="images/yuehuiwenhua.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/hongsheng.png" alt="">
+            </li>
+        </ul>
+    </div>
+</div>
+<div>
+    <div class="title">
+        <p>战略合作伙伴</p>
+        <span>COOPERATE</span>
+    </div>
+    <div class="partner">
+        <img src="images/zhongguoguangbo.png" alt="">
+    </div>
+</div>
+<div>
+    <div class="title">
+        <p>创业导师</p>
+        <span>TUTOR</span>
+    </div>
+    <div class="teacher">
+        <div class="intro">
+            <ul>
+                <li>
+                    <img src="images/chengmao.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/fancheng.png" alt="">
+                </li>
+                <li>
+                    <img src="images/gaofa.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/gaomantang.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/guochunhu.png" alt="">
+                </li>
+                <li>
+                    <img src="images/kanghonglei.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/liuheng.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/liujian.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/tangguoqiang.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/wangqian.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/yanliqiang.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/zhanghua.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/zhangmingzhi.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/zongshujie.jpg" alt="">
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $('.intro ul li:first').clone().appendTo('.intro ul');
+    var idx = 0;
+    function autoPlay(){
+        idx--;
+        if(idx < 0){
+            idx = 13;
+            $('.intro').css('left',-2100);
+        }
+        $('.intro').animate({'left':-180 * idx},600);
+    }
+    var timer = setInterval(autoPlay,2000);
+    $('.teacher').mouseenter(function(){
+        clearInterval(timer);
+    });
+    $('.teacher').mouseleave(function(){
+        timer = setInterval(autoPlay,2000);
+    });
+</script>
+<div class="bg">
+    <div class="title">
+        <p>团队与项目</p>
+        <span>TEAM AND PROJECT</span>
+    </div>
+    <div class="beijing">
+        <div class="team">
+            <a href="">
+                <span>入驻团队</span>
+                <em>BE SETTLED IN THE TEAM</em>
+            </a>
+        </div>
+        <div class="pro">
+            <a href="">
+                <span>孵化项目</span>
+                <em>INCUBATION PROJECT</em>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="bg">
+    <div class="title">
+        <p>服务支持</p>
+        <span>SERVICE</span>
+    </div>
+    <div class="service">
+    </div>
+</div>
+<div>
+    <div class="title">
+        <p>新闻资讯</p>
+        <span>NEWS</span>
+    </div>
+    <div class="news">
+        <div class="anniu">
+            <a href="" class="l-btn" id="l-btn"><img src="images/zuojiantou.png" alt=""></a>
+            <a href="" class="r-btn" id="r-btn"><img src="images/youjiantou.png" alt=""></a>
+        </div>
+        <div class="item">
+            <ul>
+                <li>
+                    <div class="image">
+                        <img src="images/jiancai.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="news-title">
+                            爱国主义正能量的儿童片《放牛的孩子王二小》举行启动仪式 著名演员兼导演修庆为摄影机揭镜
+                        </div>
+                        <div class="news-time">
+                            2016-08-31
+                        </div>
+                        <div class="news-ms">
+                            爱国主义正能量的儿童片《放牛的孩子王二小》举行启动仪式
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="image">
+                        <img src="images/dating.png" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="news-title">
+                            “2016上海网络视听季暨第八届中国网络视听产业论坛”召开 未来发展趋势明晰
+                        </div>
+                        <div class="news-time">
+                            2016-08-31
+                        </div>
+                        <div class="news-ms">
+                            9月20日-25日，网络视听产业的重量级人物相聚于一场国家级年度盛会——“2016上海网络视听季暨第八届中国网络视听产业论坛”
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="image">
+                        <img src="images/zhiliang.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="news-title">
+                            上星频道现象剧难寻 质量是提升竞争力的强助力
+                        </div>
+                        <div class="news-time">
+                            2016-08-31
+                        </div>
+                        <div class="news-ms">
+                            2016年上半年上星频道晚间黄金档电视剧，仅有1%是顶尖剧目，引领市场的现象级大剧凤毛麟角；优势剧目占7%，在数量上不占有优势，却能够在质量上引领风潮，是提升频道竞争力的强助力。
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="image">
+                        <img src="images/chenxuedong.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="news-title">
+                            爱国主义正能量的儿童片
+                        </div>
+                        <div class="news-time">
+                            2016-08-31
+                        </div>
+                        <div class="news-ms">
+                            爱国主义正能量的儿童片《放牛的孩子王二小》举行启动仪式
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="image">
+                        <img src="images/yeji.png" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="news-title">
+                            爱国主义正能量的儿童片
+                        </div>
+                        <div class="news-time">
+                            2016-08-31
+                        </div>
+                        <div class="news-ms">
+                            爱国主义正能量的儿童片《放牛的孩子王二小》举行启动仪式
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="image">
+                        <img src="images/babaquna.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="news-title">
+                            爱国主义正能量的儿童片
+                        </div>
+                        <div class="news-time">
+                            2016-08-31
+                        </div>
+                        <div class="news-ms">
+                            爱国主义正能量的儿童片《放牛的孩子王二小》举行启动仪式
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="image">
+                        <img src="images/jinnianchuangye.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="news-title">
+                            爱国主义正能量的儿童片
+                        </div>
+                        <div class="news-time">
+                            2016-08-31
+                        </div>
+                        <div class="news-ms">
+                            爱国主义正能量的儿童片《放牛的孩子王二小》举行启动仪式
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="image">
+                        <img src="images/chuangyebutie.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="news-title">
+                            爱国主义正能量的儿童片
+                        </div>
+                        <div class="news-time">
+                            2016-08-31
+                        </div>
+                        <div class="news-ms">
+                            爱国主义正能量的儿童片《放牛的孩子王二小》举行启动仪式
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="image">
+                        <img src="images/chuntian.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="news-title">
+                            爱国主义正能量的儿童片
+                        </div>
+                        <div class="news-time">
+                            2016-08-31
+                        </div>
+                        <div class="news-ms">
+                            爱国主义正能量的儿童片《放牛的孩子王二小》举行启动仪式
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="jiaodian">
+            <ul>
+                <li class="on">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+            </ul>
+        </div>
+    </div>
+    <button class="newsbtn">点击查看更多</button>
+</div>
+<script>
+    $('.item ul li:first').clone().appendTo('.item ul');
+    var idx = 0;
+    function play(){
+        idx++;
+        $('.item').animate({'left':-300 * idx},600,function(){
+            if(idx > 8){
+                idx = 0;
+                $(this).css('left',0);
+            }
+        })
+        change();
+    }
+    //右按钮点击
+    $('#r-btn').click(function(){
+        play();
+    })
+    //左按钮点击
+    $('#l-btn').click(function(){
+        idx--;
+        if(idx < 0){
+            idx = 8;
+            $('.item').css('left',-300 * idx);
+        }
+        $('.item').animate({'left':-300 * idx},600);
+        change();
+    })
+    function change(){
+        $('.jiaodian ul li').eq(idx).addClass('on').siblings().removeClass('on');
+        if(idx == 9){
+            $('.jiaodian ol li').eq(0).addClass('on').siblings().removeClass('on');
+        }
+    }
+</script>
+<div style="clear: both"></div>
+<div class="bg" id="ruzhu">
+    <div class="title">
+        <p>申请入驻</p>
+        <span>APPLY</span>
+    </div>
+    <div class="liucheng">
+        <ul>
+            <li>
+                <span>一</span>
+                <h1>入驻咨询</h1>
+            </li>
+            <li>
+                <span>二</span>
+                <h1>项目申请</h1>
+            </li>
+            <li>
+                <span>三</span>
+                <h1>初步评审</h1>
+            </li>
+            <li>
+                <span>四</span>
+                <h1>专家评审</h1>
+            </li>
+            <li>
+                <span>五</span>
+                <h1>签订协议</h1>
+            </li>
+            <li>
+                <span>六</span>
+                <h1>正式入驻</h1>
+            </li>
+        </ul>
+        <button class="ruzhubtn">点击申请</button>
+    </div>
+</div>
+<div class="Gotop">
+    <a href="javascript:window.scrollTo(0,0);" title="返回顶部"></a>
+</div>
