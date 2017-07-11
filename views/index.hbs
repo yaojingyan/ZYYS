@@ -31,14 +31,6 @@
             </li>
         </ul>
     </div>
-    <!--焦点-->
-    <div class="rec">
-        <ol>
-            <li class="cur"></li>
-            <li></li>
-            <li></li>
-        </ol>
-    </div>
     <!--向下箭头-->
     <div class="todown">
         <img src="images/xiangxiajiantou.png" alt="">
@@ -48,7 +40,7 @@
 <script>
     $(function(){
         $('.todown').on('click',function(){
-            var offsetH = $('.Aboutus').offset().top;
+            var offsetH = $('.todown').offset().top;
             $('body').animate({'scrollTop':offsetH},800);
         })
     })
@@ -67,7 +59,7 @@
             }
         $('.carContent ul li').eq(idx).animate({opacity:1},2000);
         //改变焦点
-        changeRec();
+//        changeRec();
     }
     //右按钮点击
     $('.rightBtn').click(function(){
@@ -82,33 +74,32 @@
             idx = 2;
         }
         $('.carContent ul li').eq(idx).animate({'opacity':1},2000);
-        changeRec();
+//        changeRec();
     });
     //自动轮播
     timer = setInterval(autoPlay,5000);
     $('.carousel').mouseenter(function(){
         clearInterval(timer);
         $('.leftBtn,.rightBtn').show();
-        //点击箭头下降一张图片的距离
     })
     $('.carousel').mouseleave(function(){
         timer = setInterval(autoPlay,5000);
         $('.leftBtn,.rightBtn').hide();
     })
     //焦点点击换图
-    $('.rec ol li').click(function(){
-        $(this).addClass('cur').siblings().removeClass('cur');
-        $('.carContent ul li').eq(idx).animate({'opacity':0},2000);
-        idx = $(this).index();
-        $('.carContent ul li').eq(idx).animate({'opacity':1},2000);
-    })
+//    $('.rec ol li').click(function(){
+//        $(this).addClass('cur').siblings().removeClass('cur');
+//        $('.carContent ul li').eq(idx).animate({'opacity':0},2000);
+//        idx = $(this).index();
+//        $('.carContent ul li').eq(idx).animate({'opacity':1},2000);
+//    })
     //改变焦点函数
-    function changeRec(){
-        $('.rec ol li').eq(idx).addClass('cur').siblings().removeClass('cur');
-        if(idx == 3){
-            $('.rec ol li').eq(0).addClass('cur').siblings().removeClass('cur');
-        }
-    }
+//    function changeRec(){
+//        $('.rec ol li').eq(idx).addClass('cur').siblings().removeClass('cur');
+//        if(idx == 3){
+//            $('.rec ol li').eq(0).addClass('cur').siblings().removeClass('cur');
+//        }
+//    }
 </script>
 
 <div class="Aboutus">
@@ -123,7 +114,7 @@
             行业的迅猛发展，中国社会对影视文化产业飞速提升的需求，影视行业创业拥有了巨大的发展空间的大环境里，组建的专注于全方位助推影视产业创新创业的孵化平台。 国内首家影视行业细分孵化器——中原影视孵化器位于郑东高铁核心，新客站南，与郑东CBD、CGD、大学城相邻，交通和生活便利，科技和文化资源丰富，便于创新资源和创业者集聚，固定办公场地一期投入使用面积2400平方米。
         </p>
     </div>
-    <button>点击查看更多</button>
+    <button><a href="">点击查看更多</a></button>
 </div>
 <div>
     <div class="title">
@@ -133,22 +124,22 @@
     <div class="danwei">
         <ul>
             <li>
-                <img src="images/henanyingshi.jpg" alt="">
+                <a href=""><img src="images/henanyingshi.jpg" alt=""></a>
             </li>
             <li>
-                <img src="images/daxiangyingshi.jpg" alt="">
+                <a href=""><img src="images/daxiangyingshi.jpg" alt=""></a>
             </li>
             <li>
-                <img src="images/yiyuanguoji.jpg" alt="">
+                <a href=""><img src="images/yiyuanguoji.jpg" alt=""></a>
             </li>
             <li>
-                <img src="images/zhesi.png" alt="">
+                <a href=""><img src="images/zhesi.png" alt=""></a>
             </li>
             <li>
-                <img src="images/yuehuiwenhua.jpg" alt="">
+                <a href=""><img src="images/yuehuiwenhua.jpg" alt=""></a>
             </li>
             <li>
-                <img src="images/hongsheng.png" alt="">
+                <a href=""><img src="images/hongsheng.png" alt=""></a>
             </li>
         </ul>
     </div>
@@ -159,7 +150,7 @@
         <span>COOPERATE</span>
     </div>
     <div class="partner">
-        <img src="images/zhongguoguangbo.png" alt="">
+        <a href=""><img src="images/zhongguoguangbo.png" alt=""></a>
     </div>
 </div>
 <div>
@@ -172,69 +163,154 @@
             <ul>
                 <li>
                     <img src="images/chengmao.jpg" alt="">
+                    <div class="show">
+                        <a href="" style="display: block;">
+                            &nbsp;&nbsp;&nbsp;&nbsp;程茂
+                            <img src="images/jiahao.png" alt="">
+                        </a>
+                    </div>
                 </li>
                 <li>
                     <img src="images/fancheng.png" alt="">
+                    <div class="show">
+                        <a href="" style="display: block;">
+                            &nbsp;&nbsp;&nbsp;&nbsp;樊城
+                            <img src="images/jiahao.png" alt="">
+                        </a>
+                    </div>
                 </li>
                 <li>
                     <img src="images/gaofa.jpg" alt="">
+                    <div class="show">
+                        <a href="" style="display: block;">
+                            &nbsp;&nbsp;&nbsp;&nbsp;高发
+                            <img src="images/jiahao.png" alt="">
+                        </a>
+                    </div>
                 </li>
                 <li>
                     <img src="images/gaomantang.jpg" alt="">
+                    <div class="show">
+                        <a href="" style="display: block;">
+                            &nbsp;&nbsp;&nbsp;&nbsp;高满堂
+                            <img src="images/jiahao.png" alt="">
+                        </a>
+                    </div>
                 </li>
                 <li>
                     <img src="images/guochunhu.png" alt="">
+                    <div class="show">
+                        <a href="" style="display: block;">
+                            &nbsp;&nbsp;&nbsp;&nbsp;郭春虎
+                            <img src="images/jiahao.png" alt="">
+                        </a>
+                    </div>
                 </li>
                 <li>
                     <img src="images/kanghonglei.jpg" alt="">
+                    <div class="show">
+                        <a href="" style="display: block;">
+                            &nbsp;&nbsp;&nbsp;&nbsp;康洪雷
+                            <img src="images/jiahao.png" alt="">
+                        </a>
+                    </div>
                 </li>
                 <li>
                     <img src="images/liuheng.jpg" alt="">
+                    <div class="show">
+                        <a href="" style="display: block;">
+                            &nbsp;&nbsp;&nbsp;&nbsp;刘恒
+                            <img src="images/jiahao.png" alt="">
+                        </a>
+                    </div>
                 </li>
                 <li>
                     <img src="images/liujian.jpg" alt="">
+                    <div class="show">
+                        <a href="" style="display: block;">
+                            &nbsp;&nbsp;&nbsp;&nbsp;刘健
+                            <img src="images/jiahao.png" alt="">
+                        </a>
+                    </div>
                 </li>
                 <li>
                     <img src="images/tangguoqiang.jpg" alt="">
+                    <div class="show">
+                        <a href="" style="display: block;">
+                            &nbsp;&nbsp;&nbsp;&nbsp;唐国强
+                            <img src="images/jiahao.png" alt="">
+                        </a>
+                    </div>
                 </li>
                 <li>
                     <img src="images/wangqian.jpg" alt="">
+                    <div class="show">
+                        <a href="" style="display: block;">
+                            &nbsp;&nbsp;&nbsp;&nbsp;王乾
+                            <img src="images/jiahao.png" alt="">
+                        </a>
+                    </div>
                 </li>
                 <li>
                     <img src="images/yanliqiang.jpg" alt="">
+                    <div class="show">
+                        <a href="" style="display: block;">
+                            &nbsp;&nbsp;&nbsp;&nbsp;闫立强
+                            <img src="images/jiahao.png" alt="">
+                        </a>
+                    </div>
                 </li>
                 <li>
                     <img src="images/zhanghua.jpg" alt="">
+                    <div class="show">
+                        <a href="" style="display: block;">
+                            &nbsp;&nbsp;&nbsp;&nbsp;张华
+                            <img src="images/jiahao.png" alt="">
+                        </a>
+                    </div>
                 </li>
                 <li>
                     <img src="images/zhangmingzhi.jpg" alt="">
+                    <div class="show">
+                        <a href="" style="display: block;">
+                            &nbsp;&nbsp;&nbsp;&nbsp;张明智
+                            <img src="images/jiahao.png" alt="">
+                        </a>
+                    </div>
                 </li>
                 <li>
                     <img src="images/zongshujie.jpg" alt="">
+                    <div class="show">
+                        <a href="" style="display: block;">
+                            &nbsp;&nbsp;&nbsp;&nbsp;宗书杰
+                            <img src="images/jiahao.png" alt="">
+                        </a>
+                    </div>
                 </li>
             </ul>
         </div>
     </div>
 </div>
-<script>
-    $('.intro ul li:first').clone().appendTo('.intro ul');
-    var idx = 0;
-    function autoPlay(){
-        idx--;
-        if(idx < 0){
-            idx = 13;
-            $('.intro').css('left',-2100);
-        }
-        $('.intro').animate({'left':-180 * idx},600);
-    }
-    var timer = setInterval(autoPlay,2000);
-    $('.teacher').mouseenter(function(){
-        clearInterval(timer);
-    });
-    $('.teacher').mouseleave(function(){
-        timer = setInterval(autoPlay,2000);
-    });
-</script>
+<!--<script>-->
+    <!--$('.intro ul li:first').clone().appendTo('.intro ul');-->
+    <!--var idx = 0;-->
+    <!--var Time = null;-->
+    <!--function autoPlay(){-->
+        <!--idx--;-->
+        <!--if(idx < 0){-->
+            <!--idx = 13;-->
+            <!--$('.intro').css('left',-2100);-->
+        <!--}-->
+        <!--$('.intro').animate({'left':-180 * idx},600);-->
+    <!--}-->
+    <!--Time = setInterval(autoPlay,2000);-->
+    <!--$('.teacher').mouseenter(function(){-->
+        <!--clearInterval(Time);-->
+    <!--});-->
+    <!--$('.teacher').mouseleave(function(){-->
+        <!--Time = setInterval(autoPlay,2000);-->
+    <!--});-->
+<!--</script>-->
 <div class="bg">
     <div class="title">
         <p>团队与项目</p>
@@ -435,7 +511,7 @@
             </ul>
         </div>
     </div>
-    <button class="newsbtn">点击查看更多</button>
+    <button class="newsbtn"><a href="">点击查看更多</a></button>
 </div>
 <script>
     $('.item ul li:first').clone().appendTo('.item ul');
@@ -504,7 +580,7 @@
                 <h1>正式入驻</h1>
             </li>
         </ul>
-        <button class="ruzhubtn">点击申请</button>
+        <button class="ruzhubtn"><a href="">点击申请</a></button>
     </div>
 </div>
 <div class="Gotop">

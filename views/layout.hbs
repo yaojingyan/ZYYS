@@ -4,13 +4,6 @@
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
       <script src="/javascripts/jquery.min.js"></script>
-      <script>
-          $('#second-menu').hide();
-          $('#Show').click(function () {
-              $('#second-menu').show();
-          })
-
-      </script>
   </head>
   <body>
     <header>
@@ -23,24 +16,24 @@
         <div class="menu">
             <ul>
                 <li><a href="">首页</a></li>
-                <li>
-                    <a id="Show">关于我们</a>
+                <li id="Show">
+                    <a>关于我们</a>
+                    <div class="list">
+                            <a href="">孵化器简介</a>
+                            <a href="">管理团队</a>
+                            <a href="">组织架构</a>
+                            <a href="">孵化范围</a>
+                            <a href="">发起单位</a>
+                            <a href="">战略合作伙伴</a>
+                            <a href="">创业导师</a>
+                            <a href="">服务支持</a>
+                    </div>
                 </li>
                 <li><a href="">入驻团队与项目</a></li>
                 <li><a href=""> 新闻资讯</a></li>
                 <li><a href="">申请入驻</a></li>
             </ul>
         </div>
-        <ul id="second-menu">
-            <li>孵化器简介</li>
-            <li>管理团队</li>
-            <li>组织架构</li>
-            <li>孵化范围</li>
-            <li>发起单位</li>
-            <li>战略合作伙伴</li>
-            <li>创业导师</li>
-            <li>服务支持</li>
-        </ul>
     </header>
     {{{body}}}
     <footer>

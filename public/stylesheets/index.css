@@ -32,7 +32,7 @@
 .carousel .carContent ul li .text{
     position: absolute;
     top:40%;
-    left:35%;
+    left:32%;
     z-index: 999;
     color:#fff;
     font-size:50px;
@@ -69,34 +69,12 @@
     right:30px;
     background: url(../images/youkuang.png);
 }
-/*焦点*/
-.rec{
-    position: absolute;
-    bottom:10px;
-    left:20px;
-    width:60px;
-    height:5px;
-}
-.rec ol{
-    list-style-type:none;
-}
-.rec ol li{
-    float: left;
-    width:10px;
-    height:5px;
-    margin-right: 10px;
-    background-color: #fff;
-    cursor: pointer;
-}
-.cur{
-    background-color: red;
-}
 /*向下箭头*/
 .todown{
     width:86px;
     height: 86px;
     position:absolute;
-    left:50%;
+    left:48%;
     bottom:30px;
 }
 /*模块同样的样式*/
@@ -122,6 +100,10 @@ button{
     position: relative;
     left:45%;
     margin-top: 30px;
+}
+a{
+    text-decoration: none;
+    color: #fff;
 }
 /*关于我们*/
 .jianjie p{
@@ -206,6 +188,7 @@ div.partner:hover::before{
     top:0;
     left:0;
     font-size:20px;
+    line-height:200px;
     color:#fff;
     width:100%;
     height: 100%;
@@ -217,8 +200,8 @@ div.teacher{
     width:80%;
     height: 190px;
     margin:30px auto;
-    background-color: skyblue;
-    /*overflow: hidden;*/
+    /*background-color: skyblue;*/
+    overflow: hidden;
     position: relative;
 }
 div.teacher .intro{
@@ -236,24 +219,45 @@ div.teacher ul li{
     margin-top:5px;
     width: 180px;
     height: 180px;
+    position: relative;
 }
 div.teacher ul li img{
     width: 180px;
     height: 180px;
 }
-div.intro ul li:hover::before{
-    content: "唐国强";
+div.intro ul li .show{
+    display: block;
+    opacity:0;
     position: absolute;
-    top:5px;
+    top:0;
     left:0;
-    font-size:20px;
-    color:#fff;
-    /*width: 100%;*/
-    /*height: 100%;*/
+    width: 180px;
+    height: 180px;
     background-color: #f2770d;
+    z-index: 6;
+    transition: all 2s ease 0s;
+}
+div.intro ul li:hover .show{
+    transition: all 2s ease 0s;
+    opacity: 1;
+}
+div.intro ul li .show a{
     text-align:center;
-    /*过渡*/
-    transition:all 0.4s ease 0s;
+    display: block;
+    width: 150px;
+    height: 150px;
+    font-size: 17px;
+    color: #fff;
+    font-weight:bold;
+    padding-top: 30px;
+    position: relative;
+}
+div.intro ul li .show a img{
+    width:37px;
+    height: 37px;
+    position: absolute;
+    bottom: 30px;
+    left:72px;
 }
 /*团队与项目*/
 div.bg{
@@ -289,13 +293,15 @@ div.beijing{
     margin-top: 180px;
     text-decoration: none;
 }
+.beijing .team a:hover,.pro a:hover{
+    background: url(../images/10.png) no-repeat left top;
+}
 .beijing .pro a{
     margin-left: 30%;
 }
 .beijing .team a span:hover,.pro a span:hover{
     background-color: #fff;
     color: #f2770d;
-    /*background: url(../images/);*/
 }
 .team a span,.pro a span{
     display: block;
@@ -358,6 +364,9 @@ div.beijing{
     color: #fff;
     background-color: #f2770d;
 }
+.news .item ul li:hover .news-ms{
+    color: #fff;
+}
 .news .item ul li img{
     width:100%;
     height:260px;
@@ -413,7 +422,7 @@ div.beijing{
 .jiaodian ul{
     list-style-type:none;
     text-align: center;
-    margin:0 auto;
+    margin:0 45%;
     padding:0;
 }
 .jiaodian ul li{
